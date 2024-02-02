@@ -1,0 +1,17 @@
+{
+  "slot1":{
+    "SSID": "Network 1",
+    "password":[]
+  },
+  "slot2":{
+    "SSID": "Network 2",
+    "password":[]
+  },
+  "screen":{
+    "AOT":false,
+    "screen":0,
+    "x":null,
+    "y":null
+  },
+  "autoStart":false
+}
