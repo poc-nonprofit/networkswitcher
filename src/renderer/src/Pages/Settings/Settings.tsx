@@ -1,10 +1,8 @@
-import { AppBar, Button, ButtonBase, Card, Divider, Input, Switch, TextField, ThemeProvider, ToggleButton, ToggleButtonGroup, createTheme } from "@suid/material"
+import { AppBar, Button, ButtonBase, Switch, TextField } from "@suid/material"
 import * as solid from "solid-js";
-import clsx from "clsx";
 import { BsChevronLeft } from "solid-icons/bs";
 
 import style from "./Settings.module.scss";
-import { blue, blueGrey, purple } from "@suid/material/colors";
 import { VsSave } from "solid-icons/vs";
 import { useNavigate } from "@solidjs/router";
 import DeleteModal from "./Modal/DeleteModal";
