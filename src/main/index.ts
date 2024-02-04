@@ -25,7 +25,7 @@ function createWindow(): void {
         autoHideMenuBar: true,
         transparent: true,
         frame: false,
-        resizable: false,
+        //resizable: false,
         maximizable: false,
         fullscreenable: false,
         skipTaskbar: true,
@@ -60,7 +60,9 @@ function createWindow(): void {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
     // Set app user model id for windows
-    electronApp.setAppUserModelId('com.electron')
+    electronApp.setAppUserModelId('com.electron');
+
+    createWindow();
 
     const tray = new Tray(icon);
     tray.setToolTip("Network Switcher");
@@ -79,8 +81,6 @@ app.whenReady().then(() => {
     app.on('browser-window-created', (_, window) => {
         optimizer.watchWindowShortcuts(window)
     })
-
-    createWindow()
 
     app.on('activate', function () {
         // On macOS it's common to re-create a window in the app when the
@@ -124,11 +124,16 @@ ipcMain.on("resize", (e, size) => {
     if (size == "large") {
         win?.setSize(500, 720);
         win?.setSkipTaskbar(false);
+        console.log("large");
+
     }
     else if (typeof size == "object") win?.setSize(size[0], size[1]);
     else {
+        win?.setResizable(true);
         win?.setSize(500, 140);
-        win?.setSkipTaskbar(false);
+        win?.setSkipTaskbar(true);
+        win?.setResizable(false);
+
     };
 });
 
