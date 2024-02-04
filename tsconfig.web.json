@@ -10,6 +10,7 @@
     "composite": true,
     "jsxImportSource": "solid-js",
     "baseUrl": ".",
+    "allowUnusedLabels": true,
     "paths": {
       "@renderer/*": [
         "src/renderer/src/*"
