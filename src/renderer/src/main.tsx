@@ -1,4 +1,8 @@
 import { render } from 'solid-js/web'
 import App from './App/App';
 
-render(() => <App />, document.getElementById('root') as HTMLElement)
+window.addEventListener("load", () => {
+
+    render(() => <App />, document.getElementById('root') as HTMLElement)
+
+});
